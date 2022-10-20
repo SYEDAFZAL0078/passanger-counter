@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>passanger counter</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            background: rgb(238, 174, 202);
+            background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+        }
+
+        .cont {
+            /* background: rgb(34,193,195);
+            background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(250,192,65,0.7389095803965693) 100%); */
+            background-color: white;
+            width: 500px;
+            padding: 30px;
+            height: 350px;
+            margin-top: 200px;
+            margin-left: 500px;
+
+        }
+
+        #heading {
+            margin: 20px;
+            font-weight: bolder;
+
+        }
+
+        #count {
+            font-weight: bolder;
+            font-size: 60px;
+            color: deepskyblue;
+        }
+
+        button {
+            border: none;
+            width: 150px;
+            height: 30px;
+            margin: 30px 20px;
+            border-radius: 10px;
+
+        }
+
+        #increment {
+            background-color: yellow;
+            font-weight: bolder;
+            text-align: center;
+            display: block;
+            margin-bottom: 10px;
+            margin-left: 150px;
+
+
+        }
+
+        #saving {
+            background-color: red;
+            font-weight: bolder;
+            display: block;
+
+            margin-left: 150px;
+
+        }
+
+        #history {
+            font-size: 20px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cont">
+        <h1 id="heading">PASSANGERS COUNT</h1>
+        <h2 id="count">0</h2>
+        <button id="increment" onclick="incre()">INCREMENT</button>
+        <button id="saving" onclick="save()">SAVE</button>
+        <p id="history">previous Passangers:</p>
+
+
+
+
+
+        <script>
+            let count = 0;
+            function incre() {
+                count += 1;
+                document.getElementById("count").textContent = count;
+            }
+            function save() {
+                let countstr = " " + count + "-" + " ";
+                document.getElementById("history").textContent += countstr;
+                document.getElementById("count").innerText = 0;
+                count = 0;
+            }
+        </script>
+    </div>
+</body>
+
+</html>
